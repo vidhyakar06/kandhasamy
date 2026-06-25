@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-gray-800 flex flex-col md:row items-center justify-between gap-6 text-[10px] text-gray-500 tracking-widest uppercase">
+        <div className="pt-10 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] text-gray-500 tracking-widest uppercase">
           <p>© 2026 Kandhasamy Textiles. ALL RIGHTS RESERVED.</p>
           <div className="flex space-x-8">
             <a href="#" className="hover:text-white transition-colors duration-300 underline underline-offset-4">Privacy Policy</a>

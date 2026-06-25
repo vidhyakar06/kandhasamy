@@ -77,11 +77,22 @@ const Navbar: React.FC = () => {
 
           <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Header Icons and Menu Button */}
+          <div className="md:hidden flex items-center space-x-3">
+            <button 
+              onClick={() => setIsCartOpen(true)}
+              className="text-text-dark hover:text-accent-gold transition-colors duration-300 relative p-2"
+            >
+              <ShoppingCart size={22} />
+              {totalItems > 0 && (
+                <span className="absolute top-1 right-1 bg-accent-gold text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+                  {totalItems}
+                </span>
+              )}
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-text-dark hover:text-accent-gold focus:outline-none transition-colors duration-300"
+              className="text-text-dark hover:text-accent-gold focus:outline-none transition-colors duration-300 p-2"
             >
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -110,9 +121,26 @@ const Navbar: React.FC = () => {
                 </Link>
               ))}
               <div className="flex justify-around pt-6 border-t border-gray-100">
-                <Search size={24} className="text-text-dark" />
-                <User size={24} className="text-text-dark" />
-                <ShoppingCart size={24} className="text-text-dark" />
+                <button className="text-text-dark hover:text-accent-gold transition-colors duration-300 p-2">
+                  <Search size={22} />
+                </button>
+                <button className="text-text-dark hover:text-accent-gold transition-colors duration-300 p-2">
+                  <User size={22} />
+                </button>
+                <button 
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsCartOpen(true);
+                  }}
+                  className="text-text-dark hover:text-accent-gold transition-colors duration-300 relative p-2"
+                >
+                  <ShoppingCart size={22} />
+                  {totalItems > 0 && (
+                    <span className="absolute top-1 right-1 bg-accent-gold text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+                      {totalItems}
+                    </span>
+                  )}
+                </button>
               </div>
             </div>
           </motion.div>
