@@ -140,6 +140,47 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Leadership Section */}
+      <section className="bg-beige-light py-24 mb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="text-accent-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">
+              Our Leadership
+            </span>
+            <h2 className="text-3xl md:text-5xl font-serif text-text-dark mb-4">The Custodians of Our Legacy</h2>
+            <div className="w-20 h-1 bg-accent-gold mx-auto"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            {[
+              { 
+                name: "Srinivasan K", 
+                role: "Co-Founder & Director", 
+                desc: "Guiding the artistic vision and traditional heritage craftsmanship of Kandhasamy Textile with decades of experience." 
+              },
+              { 
+                name: "Murugavel K", 
+                role: "Co-Founder & Director", 
+                desc: "Steering the operations, quality innovation, and global outreach of the brand while preserving core family weaving ethics." 
+              }
+            ].map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="bg-white p-10 text-center border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <h3 className="text-2xl font-serif text-text-dark mb-2">{member.name}</h3>
+                <p className="text-xs uppercase tracking-widest text-accent-gold font-bold mb-6">{member.role}</p>
+                <p className="text-sm text-gray-500 leading-relaxed font-light">{member.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Quote / Call to action */}
       <section className="bg-text-dark py-24 text-center px-4">
         <motion.div
