@@ -38,7 +38,7 @@ const ContactPage: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-white p-10 shadow-sm border border-gray-100">
+            <div className="bg-white p-6 sm:p-10 shadow-sm border border-gray-100">
               <h2 className="text-2xl font-serif text-text-dark mb-8 uppercase tracking-wider">Get in Touch</h2>
               
               <div className="space-y-8 mb-12">
@@ -98,7 +98,7 @@ const ContactPage: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-white p-10 shadow-sm border border-gray-100">
+            <div className="bg-white p-6 sm:p-10 shadow-sm border border-gray-100">
               <h2 className="text-2xl font-serif text-text-dark mb-8 uppercase tracking-wider">Send a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
