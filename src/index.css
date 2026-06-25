@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #FDFCFB;
+  --color-beige-light: #FAF7F2;
+  --color-pastel-blue: #E8F1F2;
+  --color-light-grey: #F5F5F5;
+  --color-text-dark: #2C3E50;
+  --color-accent-gold: #D4AF37;
+  
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Outfit", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-primary text-text-dark font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .lux-button {
+    @apply px-8 py-3 bg-text-dark text-white rounded-none transition-all duration-300 hover:bg-accent-gold hover:shadow-lg disabled:opacity-50;
+  }
+  
+  .lux-button-outline {
+    @apply px-8 py-3 border border-text-dark text-text-dark rounded-none transition-all duration-300 hover:bg-text-dark hover:text-white;
+  }
+}
+
+.text-lux-gradient {
+  background: linear-gradient(135deg, #2C3E50 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.towel-pattern {
+  background-image: radial-gradient(#D4AF37 0.5px, transparent 0.5px);
+  background-size: 20px 20px;
+}
