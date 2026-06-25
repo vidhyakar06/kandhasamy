@@ -36,7 +36,7 @@ const Home: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-accent-gold p-8 flex items-center justify-center text-center">
+              <div className="absolute bottom-0 right-0 sm:-bottom-8 sm:-right-8 w-40 h-40 sm:w-48 sm:h-48 bg-accent-gold p-6 sm:p-8 flex items-center justify-center text-center">
                 <p className="text-white text-sm font-serif italic">
                   "The softest towels I have ever owned. Truly worth every penny."
                 </p>
