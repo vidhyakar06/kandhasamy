@@ -71,7 +71,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              className="pointer-events-auto bg-white w-full max-w-5xl max-h-[92vh] overflow-hidden rounded-none shadow-2xl flex flex-col md:flex-row relative"
+              className="pointer-events-auto bg-white w-full max-w-5xl max-h-[90vh] md:max-h-[92vh] overflow-y-auto md:overflow-hidden rounded-none shadow-2xl flex flex-col md:flex-row relative"
             >
               {/* ── Close ── */}
               <button
@@ -84,7 +84,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               {/* ═══════════════════════════════
                   LEFT — Multi-Angle Gallery
               ═══════════════════════════════ */}
-              <div className="w-full md:w-[52%] bg-[#F7F5F2] flex flex-col h-auto md:h-full overflow-hidden border-b md:border-b-0 md:border-r border-gray-100">
+              <div className="w-full md:w-[52%] bg-[#F7F5F2] flex flex-col h-auto md:h-full md:overflow-hidden border-b md:border-b-0 md:border-r border-gray-100">
 
                 {/* 360° badge */}
                 {hasMultiple && (
@@ -205,7 +205,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               {/* ═══════════════════════════════
                   RIGHT — Product Details
               ═══════════════════════════════ */}
-              <div className="w-full md:w-[48%] p-6 md:p-8 flex flex-col justify-between overflow-y-auto">
+              <div className="w-full md:w-[48%] p-6 md:p-8 flex flex-col justify-between md:overflow-y-auto md:h-full">
                 <div className="space-y-5">
                   {/* Category & Rating */}
                   <div className="flex justify-between items-center">
