@@ -48,7 +48,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs uppercase font-bold tracking-widest text-gray-400 mb-1">Our Heritage Studio</p>
-                    <p className="text-sm text-text-dark">123 Textile Street, Weaving Quarter, <br /> Varanasi, Uttar Pradesh, 221001, India</p>
+                    <p className="text-sm text-text-dark">Eswaran Kovil Street, Manikudu,<br /> Erode, Tamil Nadu, India</p>
                   </div>
                 </div>
 
@@ -58,7 +58,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs uppercase font-bold tracking-widest text-gray-400 mb-1">Inquiries</p>
-                    <p className="text-sm text-text-dark">hello@kandhasamytextile.com</p>
+                    <p className="text-sm text-text-dark">srinivasanKandasamy540@gmail.com</p>
                   </div>
                 </div>
 
@@ -68,7 +68,7 @@ const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs uppercase font-bold tracking-widest text-gray-400 mb-1">Call Us</p>
-                    <p className="text-sm text-text-dark">+91 (0) 542 123 4567</p>
+                    <p className="text-sm text-text-dark">+91 98428 07243 <br /> +91 94431 50160</p>
                   </div>
                 </div>
               </div>
