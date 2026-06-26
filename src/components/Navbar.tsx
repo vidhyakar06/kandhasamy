@@ -34,8 +34,13 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <span className={`text-2xl font-serif tracking-widest transition-colors duration-300 ${scrolled ? 'text-text-dark' : 'text-text-dark'}`}>
+          <Link to="/" className="flex items-center gap-2 md:gap-3 group">
+            <img 
+              src="/assets/logo.jpg" 
+              alt="Kandhasamy Textile Logo" 
+              className="h-8 w-8 md:h-10 md:w-10 object-contain rounded-full border border-accent-gold/30 group-hover:scale-105 transition-transform duration-300 shadow-sm"
+            />
+            <span className={`text-base sm:text-lg md:text-xl font-serif tracking-widest transition-colors duration-300 ${scrolled ? 'text-text-dark' : 'text-text-dark'}`}>
               KANDHASAMY TEXTILE
             </span>
           </Link>

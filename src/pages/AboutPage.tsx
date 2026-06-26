@@ -83,6 +83,79 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Brand Seal Section */}
+      <section className="py-24 bg-white border-y border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex justify-center"
+            >
+              <div className="relative max-w-md w-full aspect-square border-8 border-accent-gold/10 p-4 bg-beige-light shadow-xl">
+                <img 
+                  src="/assets/logo.jpg" 
+                  alt="Kandhasamy Textile Legacy Seal" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-accent-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">
+                The Seal of Authenticity
+              </span>
+              <h2 className="text-4xl md:text-5xl font-serif text-text-dark mb-6">
+                Our Crest, <br />Our Promise.
+              </h2>
+              <p className="text-gray-600 mb-8 leading-relaxed font-light">
+                Our legacy crest encapsulates four generations of weaving excellence. Every detail in this elaborate seal represents a foundational pillar of Kandhasamy Textile:
+              </p>
+              <ul className="space-y-6 text-sm text-gray-500 font-light mb-8">
+                <li className="flex gap-4">
+                  <span className="text-accent-gold font-bold text-lg font-serif">01</span>
+                  <div>
+                    <strong className="text-text-dark font-medium font-serif text-base block mb-1">4 Generations of Legacy</strong>
+                    Depicting the proud lineage of weavers who have preserved and passed down secret techniques from father to son.
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-accent-gold font-bold text-lg font-serif">02</span>
+                  <div>
+                    <strong className="text-text-dark font-medium font-serif text-base block mb-1">The Gopuram Tower</strong>
+                    A symbol of our deep geographical roots in Tamil Nadu, India, drawing inspiration from classical design and temple art.
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-accent-gold font-bold text-lg font-serif">03</span>
+                  <div>
+                    <strong className="text-text-dark font-medium font-serif text-base block mb-1">Pure Organic Cotton</strong>
+                    Adorned with cotton blossoms signifying our commitment to 100% sustainably-sourced, hypoallergenic fibers.
+                  </div>
+                </li>
+                <li className="flex gap-4">
+                  <span className="text-accent-gold font-bold text-lg font-serif">04</span>
+                  <div>
+                    <strong className="text-text-dark font-medium font-serif text-base block mb-1">Traditional Loom Shuttles</strong>
+                    Honoring the tactile, physical craft of slow weaving that gives our towels unmatched absorbency and softness.
+                  </div>
+                </li>
+              </ul>
+              <div className="p-5 bg-beige-light border-l-4 border-accent-gold italic text-sm text-gray-600 font-serif shadow-sm">
+                "Rooted in Tradition, Woven with Pride"
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Heritage Detail */}
       <section className="px-4 sm:px-6 lg:px-8 mb-24">
         <div className="max-w-7xl mx-auto">

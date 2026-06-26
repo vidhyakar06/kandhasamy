@@ -7,8 +7,15 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Info */}
-          <div>
-            <h2 className="text-2xl font-serif tracking-[0.2em] mb-6">KANDHASAMY TEXTILE</h2>
+          <div className="flex flex-col items-start">
+            <div className="flex items-center gap-3 mb-6">
+              <img 
+                src="/assets/logo.jpg" 
+                alt="Kandhasamy Textile Logo" 
+                className="h-10 w-10 object-contain rounded-full border border-accent-gold/40 shadow-md"
+              />
+              <h2 className="text-xl font-serif tracking-[0.2em] text-white">KANDHASAMY TEXTILE</h2>
+            </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
               Timeless elegance and unmatched comfort. Woven with tradition, designed for modern luxury living.
             </p>
