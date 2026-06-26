@@ -62,15 +62,24 @@ const Navbar: React.FC = () => {
 
           {/* Icons */}
           <div className="hidden md:flex items-center space-x-6">
-            <button className="text-text-dark hover:text-accent-gold transition-colors duration-300">
+            <Link
+              to="/shop"
+              className="text-text-dark hover:text-accent-gold transition-colors duration-300"
+              aria-label="Search products"
+            >
               <Search size={22} />
-            </button>
-            <button className="text-text-dark hover:text-accent-gold transition-colors duration-300">
+            </Link>
+            <Link
+              to="/contact"
+              className="text-text-dark hover:text-accent-gold transition-colors duration-300"
+              aria-label="Contact us"
+            >
               <User size={22} />
-            </button>
+            </Link>
             <button 
               onClick={() => setIsCartOpen(true)}
               className="text-text-dark hover:text-accent-gold transition-colors duration-300 relative"
+              aria-label="Open cart"
             >
               <ShoppingCart size={22} />
               {totalItems > 0 && (
@@ -127,12 +136,22 @@ const Navbar: React.FC = () => {
                 </Link>
               ))}
               <div className="flex justify-around pt-6 border-t border-gray-100">
-                <button className="text-text-dark hover:text-accent-gold transition-colors duration-300 p-2">
+                <Link
+                  to="/shop"
+                  onClick={() => setIsOpen(false)}
+                  className="text-text-dark hover:text-accent-gold transition-colors duration-300 p-2"
+                  aria-label="Search products"
+                >
                   <Search size={22} />
-                </button>
-                <button className="text-text-dark hover:text-accent-gold transition-colors duration-300 p-2">
+                </Link>
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="text-text-dark hover:text-accent-gold transition-colors duration-300 p-2"
+                  aria-label="Contact us"
+                >
                   <User size={22} />
-                </button>
+                </Link>
                 <button 
                   onClick={() => {
                     setIsOpen(false);

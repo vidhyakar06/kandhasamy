@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FeaturedProducts from './components/FeaturedProducts';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const Layout: React.FC<{children: React.ReactNode}> = ({ children }) => (
   <div className="min-h-screen flex flex-col bg-[#FDFCFB]">
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
                   Hypoallergenic & Skin Friendly
                 </li>
               </ul>
-              <button className="lux-button">Learn More About Us</button>
+              <Link to="/about" className="lux-button inline-block">Learn More About Us</Link>
             </div>
           </div>
         </div>

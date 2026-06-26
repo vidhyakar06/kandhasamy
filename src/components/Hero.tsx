@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -32,20 +33,22 @@ const Hero: React.FC = () => {
               Explore the timeless elegance of Kandhasamy Textiles. Every thread tells a story of tradition, luxury, and unmatched craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="lux-button flex items-center justify-center gap-2"
-              >
-                Explore Shop <ArrowRight size={18} />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border border-white text-white hover:bg-white hover:text-text-dark transition-all duration-300 flex items-center justify-center"
-              >
-                Our Story
-              </motion.button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  to="/shop"
+                  className="lux-button flex items-center justify-center gap-2 w-full sm:w-auto"
+                >
+                  Explore Shop <ArrowRight size={18} />
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link
+                  to="/about"
+                  className="px-8 py-3 border border-white text-white hover:bg-white hover:text-text-dark transition-all duration-300 flex items-center justify-center w-full sm:w-auto"
+                >
+                  Our Story
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>

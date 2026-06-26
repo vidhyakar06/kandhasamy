@@ -52,7 +52,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                     <ShoppingBag size={32} className="text-gray-400" />
                   </div>
                   <p className="text-gray-500 font-serif italic mb-6">Your bag is currently empty.</p>
-                  <button onClick={onClose} className="lux-button">Start Shopping</button>
+                  <Link to="/shop" onClick={onClose} className="lux-button">Start Shopping</Link>
                 </div>
               ) : (
                 cart.map((item) => (

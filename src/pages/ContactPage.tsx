@@ -75,8 +75,19 @@ const ContactPage: React.FC = () => {
 
               <h3 className="text-xs uppercase font-bold tracking-widest text-gray-400 mb-6">Follow Our Journey</h3>
               <div className="flex gap-4">
-                {[Instagram, Twitter, Facebook].map((Icon, i) => (
-                  <a key={i} href="#" className="w-10 h-10 border border-gray-100 flex items-center justify-center hover:bg-text-dark hover:text-white hover:border-text-dark transition-all duration-300">
+                {[
+                  { Icon: Instagram, href: 'https://www.instagram.com', label: 'Instagram' },
+                  { Icon: Twitter, href: 'https://www.twitter.com', label: 'Twitter' },
+                  { Icon: Facebook, href: 'https://www.facebook.com', label: 'Facebook' },
+                ].map(({ Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-10 h-10 border border-gray-100 flex items-center justify-center hover:bg-text-dark hover:text-white hover:border-text-dark transition-all duration-300"
+                  >
                     <Icon size={18} />
                   </a>
                 ))}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Award, Feather, ShieldCheck, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const AboutPage: React.FC = () => {
   return (
@@ -270,13 +271,11 @@ const AboutPage: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-serif text-white mb-10 italic leading-snug">
             "We don't just sell textiles; we offer a connection to a slower, more beautiful way of living."
           </h2>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="lux-button"
-          >
-            Explore Our Collection
-          </motion.button>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link to="/shop" className="lux-button inline-block">
+              Explore Our Collection
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
     </div>
