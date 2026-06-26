@@ -65,13 +65,13 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
           />
 
           {/* Modal Container */}
-          <div className="fixed inset-0 z-[90] flex items-center justify-center p-4 sm:p-6 md:p-10 pointer-events-none">
+          <div className="fixed inset-0 z-[90] flex items-end sm:items-center justify-center p-0 sm:p-4 md:p-10 pointer-events-none">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              className="pointer-events-auto bg-white w-full max-w-5xl max-h-[90vh] md:max-h-[92vh] overflow-y-auto md:overflow-hidden rounded-none shadow-2xl flex flex-col md:flex-row relative"
+              className="pointer-events-auto bg-white w-full max-w-5xl max-h-[95vh] overflow-y-auto md:overflow-hidden rounded-none shadow-2xl flex flex-col md:flex-row relative"
             >
               {/* ── Close ── */}
               <button

@@ -59,7 +59,7 @@ const ShopPage: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-serif text-text-dark mb-4 uppercase tracking-widest">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif text-text-dark mb-4 uppercase tracking-widest">
             The Collection
           </h1>
           <p className="text-gray-500 max-w-xl mx-auto italic">
@@ -82,10 +82,10 @@ const ShopPage: React.FC = () => {
           </div>
 
           {/* Filter Dropdowns */}
-          <div className="flex flex-wrap gap-4">
-            <div className="relative group">
+          <div className="flex flex-wrap gap-3 sm:gap-4">
+            <div className="relative group flex-1 sm:flex-none">
               <select 
-                className="appearance-none bg-white border border-gray-100 py-4 pl-6 pr-12 focus:outline-none focus:border-accent-gold transition-colors font-sans text-xs font-bold uppercase tracking-widest cursor-pointer"
+                className="appearance-none w-full bg-white border border-gray-100 py-4 pl-4 sm:pl-6 pr-10 focus:outline-none focus:border-accent-gold transition-colors font-sans text-xs font-bold uppercase tracking-widest cursor-pointer"
                 value={selectedCategory}
                 onChange={(e) => {
                   const val = e.target.value;
@@ -100,23 +100,23 @@ const ShopPage: React.FC = () => {
               >
                 {categories.map(c => <option key={c} value={c}>Category: {c}</option>)}
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" size={16} />
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" size={16} />
             </div>
 
-            <div className="relative group">
+            <div className="relative group flex-1 sm:flex-none">
               <select 
-                className="appearance-none bg-white border border-gray-100 py-4 pl-6 pr-12 focus:outline-none focus:border-accent-gold transition-colors font-sans text-xs font-bold uppercase tracking-widest cursor-pointer"
+                className="appearance-none w-full bg-white border border-gray-100 py-4 pl-4 sm:pl-6 pr-10 focus:outline-none focus:border-accent-gold transition-colors font-sans text-xs font-bold uppercase tracking-widest cursor-pointer"
                 value={selectedMaterial}
                 onChange={(e) => setSelectedMaterial(e.target.value)}
               >
                 {materials.map(m => <option key={m} value={m}>Material: {m}</option>)}
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" size={16} />
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" size={16} />
             </div>
 
-            <div className="relative group">
+            <div className="relative group flex-1 sm:flex-none">
               <select 
-                className="appearance-none bg-white border border-gray-100 py-4 pl-6 pr-12 focus:outline-none focus:border-accent-gold transition-colors font-sans text-xs font-bold uppercase tracking-widest cursor-pointer"
+                className="appearance-none w-full bg-white border border-gray-100 py-4 pl-4 sm:pl-6 pr-10 focus:outline-none focus:border-accent-gold transition-colors font-sans text-xs font-bold uppercase tracking-widest cursor-pointer"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
@@ -125,7 +125,7 @@ const ShopPage: React.FC = () => {
                 <option value="Price: High to Low">Price: High to Low</option>
                 <option value="Rating">Top Rated</option>
               </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" size={16} />
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" size={16} />
             </div>
           </div>
         </div>

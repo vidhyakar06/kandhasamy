@@ -23,7 +23,7 @@ const ContactPage: React.FC = () => {
           <span className="text-accent-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">
             Connect with us
           </span>
-          <h1 className="text-4xl md:text-6xl font-serif text-text-dark mb-4 uppercase tracking-widest">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif text-text-dark mb-4 uppercase tracking-widest">
             Contact KANDHASAMY TEXTILE
           </h1>
           <p className="text-gray-500 max-w-xl mx-auto italic font-light">

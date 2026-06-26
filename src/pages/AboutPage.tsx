@@ -18,7 +18,7 @@ const AboutPage: React.FC = () => {
               <span className="text-accent-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">
                 Our Story
               </span>
-              <h1 className="text-5xl md:text-7xl font-serif text-text-dark mb-8 leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-text-dark mb-8 leading-tight">
                 A Legacy Woven <br /> in <span className="italic">Every Thread.</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed font-light">
@@ -194,7 +194,7 @@ const AboutPage: React.FC = () => {
               <p className="text-gray-600 mb-8 leading-relaxed font-light">
                 The signature Kandhasamy Textile patterns are more than just designs; they are geometric representations of heritage motifs that have protected and comforted families for centuries.
               </p>
-              <div className="flex gap-10">
+              <div className="flex flex-wrap gap-8 md:gap-10">
                 <div>
                   <p className="text-3xl font-serif text-accent-gold">40+</p>
                   <p className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Years of Heritage</p>

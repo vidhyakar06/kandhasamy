@@ -40,8 +40,9 @@ const Navbar: React.FC = () => {
               alt="Kandhasamy Textile Logo" 
               className="h-8 w-8 md:h-10 md:w-10 object-contain rounded-full border border-accent-gold/30 group-hover:scale-105 transition-transform duration-300 shadow-sm"
             />
-            <span className={`text-base sm:text-lg md:text-xl font-serif tracking-widest transition-colors duration-300 ${scrolled ? 'text-text-dark' : 'text-text-dark'}`}>
-              KANDHASAMY TEXTILE
+            <span className={`text-sm sm:text-base md:text-xl font-serif tracking-widest transition-colors duration-300 ${scrolled ? 'text-text-dark' : 'text-text-dark'}`}>
+              <span className="hidden sm:inline">KANDHASAMY TEXTILE</span>
+              <span className="sm:hidden">KT</span>
             </span>
           </Link>
 

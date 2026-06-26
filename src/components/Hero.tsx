@@ -25,10 +25,10 @@ const Hero: React.FC = () => {
             <span className="inline-block px-4 py-1.5 bg-accent-gold/90 text-white text-xs font-bold tracking-[0.3em] uppercase mb-6">
               The Heritage Collection 2026
             </span>
-            <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif text-white mb-6 leading-tight">
               Woven with <br /> <span className="italic">True Intention.</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed font-light">
+            <p className="text-base md:text-xl text-white/90 mb-8 leading-relaxed font-light">
               Explore the timeless elegance of Kandhasamy Textiles. Every thread tells a story of tradition, luxury, and unmatched craftsmanship.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Decorative details */}
-      <div className="absolute bottom-10 left-10 md:left-20 flex gap-10">
+      <div className="absolute bottom-6 sm:bottom-10 left-6 sm:left-10 md:left-20 hidden sm:flex gap-8 md:gap-10">
         <div className="flex flex-col">
           <span className="text-white/60 text-[10px] uppercase tracking-widest mb-1">Material</span>
           <span className="text-white text-sm font-medium">100% Organic Cotton</span>
