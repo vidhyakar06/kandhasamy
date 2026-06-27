@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link
-                  to="/about"
+                  to="/contact"
                   className="px-8 py-3 border border-white text-white hover:bg-white hover:text-text-dark transition-all duration-300 flex items-center justify-center w-full sm:w-auto"
                 >
                   Our Story
