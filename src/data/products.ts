@@ -8,11 +8,11 @@ export const products: Product[] = [
     description: 'Premium white handloom bath towels featuring elegant colored stripe borders in Maroon, Green, Blue, and Orange. Woven from 100% pure cotton for maximum absorbency and a soft, lightweight feel. Certified by SYLHETEX — size 30"×60", sold as a bundle.',
     category: 'Bath',
     images: [
-      '/assets/towels/sylhetex_multi_folded.jpg',
+      '/assets/towels/sylhetex_folded_label.jpg',
       '/assets/towels/sylhetex_rolled_bundle.jpg',
     ],
     angleLabels: [
-      'Folded Stack — Label View',
+      'Folded Stack — SYLHETEX Label',
       'Rolled Bundle — Multicolor Stripes',
     ],
     colors: ['Maroon Stripe', 'Green Stripe', 'Blue Stripe', 'Orange Stripe'],
