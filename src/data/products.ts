@@ -2,6 +2,30 @@ import { Product } from '../types';
 
 export const products: Product[] = [
   {
+    id: '20',
+    name: 'Kandhasamy Textile Earth & Sun Handloom Towels Collection',
+    price: 39.99,
+    description: 'A premium selection of handloom bath towels in warm, natural tones and vibrant contrasts. Woven from 100% pure premium cotton for exceptional absorbency and soft texture. The collection includes yellow with green stripes, terracotta brown with yellow stripes, and solid teal green with decorative tassels.',
+    category: 'Bath',
+    images: [
+      '/assets/towels/yellow_green_stripe_rolled.jpg',
+      '/assets/towels/brown_yellow_stripe_folded.jpg',
+      '/assets/towels/teal_tassel_folded.jpg',
+    ],
+    angleLabels: [
+      'Yellow & Green Stripe — Rolled Bundle',
+      'Terracotta & Yellow Stripe — Folded Stack',
+      'Teal Tassel — Folded View',
+    ],
+    colors: ['Yellow & Green', 'Terracotta Brown', 'Teal Green'],
+    sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
+    material: 'Pure Cotton Handloom',
+    rating: 4.9,
+    reviews: 16,
+    isNew: true,
+    isBestSeller: true,
+  },
+  {
     id: '19',
     name: 'Kandhasamy Textile White Gold Stripe Cotton Towel',
     price: 32.99,
