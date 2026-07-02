@@ -2,6 +2,26 @@ import { Product } from '../types';
 
 export const products: Product[] = [
   {
+    id: '19',
+    name: 'Kandhasamy Textile White Gold Stripe Cotton Towel',
+    price: 32.99,
+    description: 'Classic white handloom cotton towel featuring a single elegant gold/brown accent stripe. Minimalist design with a soft, smooth finish — ideal for daily use. Lightweight, absorbent, and durable with traditional fringed edges.',
+    category: 'Bath',
+    images: [
+      '/assets/towels/white_gold_stripe_folded.jpg',
+    ],
+    angleLabels: [
+      'Folded Stack View',
+    ],
+    colors: ['White with Gold Stripe'],
+    sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
+    material: 'Pure Cotton Handloom',
+    rating: 4.7,
+    reviews: 10,
+    isNew: true,
+    isBestSeller: true,
+  },
+  {
     id: '18',
     name: 'Kandhasamy Textile White Fine-Line Cotton Towel',
     price: 29.99,
