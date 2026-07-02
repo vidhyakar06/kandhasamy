@@ -2,6 +2,28 @@ import { Product } from '../types';
 
 export const products: Product[] = [
   {
+    id: '17',
+    name: 'Kandhasamy Textile Gingham Checked Cotton Towel',
+    price: 34.99,
+    description: 'Vibrant gingham checked handloom towels in bold colors. Woven from 100% cotton with a classic large-check pattern — lightweight, highly absorbent, and durable. Available in Red, Green, Maroon, Pink, and Blue.',
+    category: 'Bath',
+    images: [
+      '/assets/towels/gingham_red_folded.jpg',
+      '/assets/towels/gingham_multicolor_bundle.jpg',
+    ],
+    angleLabels: [
+      'Red & Navy — Folded View',
+      'All Colors — Rolled Bundle',
+    ],
+    colors: ['Red', 'Green', 'Maroon', 'Pink', 'Blue'],
+    sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
+    material: 'Pure Cotton Handloom',
+    rating: 4.7,
+    reviews: 15,
+    isNew: true,
+    isBestSeller: true,
+  },
+  {
     id: '16',
     name: 'Kandhasamy Textile SYLHETEX White Stripe Handloom Towel',
     price: 39.99,
