@@ -9,9 +9,11 @@ export const products: Product[] = [
     category: 'Bath',
     images: [
       '/assets/towels/sylhetex_multi_folded.jpg',
+      '/assets/towels/sylhetex_rolled_bundle.jpg',
     ],
     angleLabels: [
-      'Folded Stack — SYLHETEX Label',
+      'Folded Stack — Label View',
+      'Rolled Bundle — Multicolor Stripes',
     ],
     colors: ['Maroon Stripe', 'Green Stripe', 'Blue Stripe', 'Orange Stripe'],
     sizes: ['Single (30" x 60")'],
