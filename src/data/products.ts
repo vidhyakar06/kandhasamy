@@ -2,6 +2,28 @@ import { Product } from '../types';
 
 export const products: Product[] = [
   {
+    id: '18',
+    name: 'Kandhasamy Textile White Fine-Line Cotton Towel',
+    price: 29.99,
+    description: 'Elegant white cotton towels with delicate fine-line stripe grid pattern in green and grey. Ultra-soft, lightweight, and smooth to the touch — perfect for everyday use. Woven from 100% pure cotton for premium quality and durability.',
+    category: 'Bath',
+    images: [
+      '/assets/towels/white_fineline_folded.jpg',
+      '/assets/towels/white_fineline_stack.jpg',
+    ],
+    angleLabels: [
+      'Folded — Flat View',
+      'Stacked — Side View',
+    ],
+    colors: ['White with Green Lines', 'White with Grey Lines'],
+    sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
+    material: 'Pure Cotton',
+    rating: 4.8,
+    reviews: 12,
+    isNew: true,
+    isBestSeller: true,
+  },
+  {
     id: '17',
     name: 'Kandhasamy Textile Gingham Checked Cotton Towel',
     price: 34.99,
