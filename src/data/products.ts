@@ -2,6 +2,28 @@ import { Product } from '../types';
 
 export const products: Product[] = [
   {
+    id: '15',
+    name: 'Kandhasamy Textile Classic ODSSCO Checked Towel',
+    price: 44.99,
+    description: 'Traditional handloom bath towel featuring a classic white grid design with vibrant multicolor accent checks and stripes. Woven from 100% pure premium cotton, this highly absorbent and quick-drying towel showcases the authentic ODSSCO stamp and measures a generous 30" x 72".',
+    category: 'Bath',
+    images: [
+      '/assets/towels/odssco_rolled.jpg',
+      '/assets/towels/odssco_folded.jpg',
+    ],
+    angleLabels: [
+      'Rolled Bundle',
+      'Folded View',
+    ],
+    colors: ['Multicolor Checks'],
+    sizes: ['Single (30" x 72")'],
+    material: 'Pure Cotton Handloom',
+    rating: 4.9,
+    reviews: 18,
+    isNew: true,
+    isBestSeller: true,
+  },
+  {
     id: '8',
     name: 'Kandhasamy Textile Premium Bath Towels',
     price: 44.99,
