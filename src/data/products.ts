@@ -2,6 +2,50 @@ import { Product } from '../types';
 
 export const products: Product[] = [
   {
+    id: '23',
+    name: 'Kandhasamy Textile Fan-Checked Tassel Towels',
+    price: 44.99,
+    description: 'A gorgeous collection of handloom checked towels with decorative fringed tassels. Woven from 100% premium organic cotton, these towels feature classic grid checks and offer exceptional absorbency and softness. Available in a fan of vibrant colors including Red, Green, Navy, Brown, Orange, and Blue.',
+    category: 'Bath',
+    images: [
+      '/assets/towels/fan_checked_towels.jpg',
+      '/assets/towels/gingham_multicolor_bundle.jpg',
+    ],
+    angleLabels: [
+      'Fan Spread View',
+      'Rolled Pile View',
+    ],
+    colors: ['Red', 'Green', 'Navy', 'Brown', 'Orange', 'Blue'],
+    sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
+    material: 'Organic Cotton Handloom',
+    rating: 4.8,
+    reviews: 19,
+    isNew: true,
+    isBestSeller: true,
+  },
+  {
+    id: '24',
+    name: 'Kandhasamy Textile Border-Checked Handloom Towels',
+    price: 39.99,
+    description: 'Classic checked handloom towels featuring a bold solid color border. Crafted from pure long-staple cotton for unmatched absorbency and a soft, durable touch. Available in a variety of traditional checks including Maroon, Yellow, Cyan, Grey, Teal, and Orange.',
+    category: 'Bath',
+    images: [
+      '/assets/towels/vertical_checked_towels.jpg',
+      '/assets/towels/sylhetex_rolled_bundle.jpg',
+    ],
+    angleLabels: [
+      'Border Pile View',
+      'Rolled Bundle View',
+    ],
+    colors: ['Maroon', 'Yellow', 'Cyan', 'Grey', 'Teal', 'Orange'],
+    sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
+    material: 'Pure Cotton Handloom',
+    rating: 4.7,
+    reviews: 13,
+    isNew: true,
+    isBestSeller: true,
+  },
+  {
     id: '21',
     name: 'Kandhasamy Textile Classic Heritage Checked Towels',
     price: 44.99,
