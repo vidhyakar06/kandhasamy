@@ -317,22 +317,6 @@ export const products: Product[] = [
     reviews: 28,
     isNew: true,
     isBestSeller: true
-  },
-  {
-    id: '14',
-    name: 'Kandhasamy Textile Signature Floral Motif Towel',
-    price: 125.00,
-    description: 'An exquisite luxury towel featuring a beautiful floral motif woven in classic black and gold tones. Showcases the iconic Kandhasamy Textile signature woven border for a timeless, elegant look.',
-    category: 'Luxury',
-    images: ['/assets/govindaraja/signature_floral_black_gold.jpg'],
-    angleLabels: ['Floral Detail'],
-    colors: ['Black & Gold'],
-    sizes: ['Double (60" x 90")'],
-    material: 'Premium Jacquard Cotton',
-    rating: 4.9,
-    reviews: 14,
-    isNew: true,
-    isBestSeller: true
   }
 ];
 

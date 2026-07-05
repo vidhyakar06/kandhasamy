@@ -22,6 +22,19 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         onClick={() => openModal(product)}
         className="relative aspect-[3/4] overflow-hidden bg-gray-100 mb-4 cursor-pointer"
       >
+        {/* Badges */}
+        <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
+          {product.isNew && (
+            <span className="px-3 py-1 bg-white text-text-dark text-[10px] font-bold tracking-widest uppercase">
+              New
+            </span>
+          )}
+          {product.isBestSeller && (
+            <span className="px-3 py-1 bg-accent-gold text-white text-[10px] font-bold tracking-widest uppercase">
+              Best Seller
+            </span>
+          )}
+        </div>
 
 
         {/* Image */}

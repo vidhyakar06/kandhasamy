@@ -99,6 +99,16 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                 {/* Main image frame */}
                 <div className="relative flex-grow flex items-center justify-center px-6 pt-4 pb-2 overflow-hidden">
 
+                  {/* Badges */}
+                  <div className="absolute top-5 left-8 z-10 flex flex-col gap-2">
+                    {product.isNew && (
+                      <span className="px-3 py-1 bg-white text-text-dark text-[9px] font-bold tracking-widest uppercase shadow-sm">New</span>
+                    )}
+                    {product.isBestSeller && (
+                      <span className="px-3 py-1 bg-accent-gold text-white text-[9px] font-bold tracking-widest uppercase shadow-sm">Best Seller</span>
+                    )}
+                  </div>
+
 
 
                   {/* Prev / Next arrows */}
