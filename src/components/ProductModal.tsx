@@ -18,16 +18,16 @@ const ANGLE_ICONS = ['⊞', '▭', '▭', '◧', '◧'];
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose }) => {
   const { addToCart } = useCart();
-  const [activeIdx, setActiveIdx]       = useState(0);
-  const [direction, setDirection]       = useState(1);
-  const [added, setAdded]               = useState(false);
-  const [selectedColor, setSelectedColor] = useState('');
-  const [selectedSize, setSelectedSize]   = useState('');
+  const [activeIdx, setActiveIdx]           = useState(0);
+  const [direction, setDirection]           = useState(1);
+  const [added, setAdded]                   = useState(false);
+  const [selectedColors, setSelectedColors] = useState<Set<string>>(new Set());
+  const [selectedSize, setSelectedSize]     = useState('');
 
   useEffect(() => {
     setActiveIdx(0);
     setAdded(false);
-    setSelectedColor(product?.colors?.[0] ?? '');
+    setSelectedColors(new Set(product?.colors?.slice(0, 1) ?? []));
     setSelectedSize(product?.sizes?.[0] ?? '');
   }, [product, isOpen]);
 
@@ -44,8 +44,26 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
   const prev = () => goTo((activeIdx - 1 + images.length) % images.length);
   const next = () => goTo((activeIdx + 1) % images.length);
 
+  /* Toggle a color in/out of the selection (must keep at least one) */
+  const toggleColor = (color: string) => {
+    setSelectedColors(prev => {
+      const next = new Set(prev);
+      if (next.has(color)) {
+        if (next.size > 1) next.delete(color);
+      } else {
+        next.add(color);
+      }
+      return next;
+    });
+  };
+
+  /* One cart entry per selected color, each carrying the matching thumbnail image */
   const handleAddToCart = () => {
-    addToCart(product, selectedColor, selectedSize, images[activeIdx]);
+    selectedColors.forEach(color => {
+      const colorIdx = product.colors.indexOf(color);
+      const image = colorIdx >= 0 && colorIdx < images.length ? images[colorIdx] : images[activeIdx];
+      addToCart(product, color, selectedSize, image);
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
@@ -270,21 +288,42 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                     </div>
                     <div className="col-span-2">
                       <span className="text-gray-400 uppercase tracking-wider block mb-2">Colors / Styles</span>
-                      <div className="flex flex-wrap gap-2 mt-1">
-                        {product.colors.map((color) => (
-                          <button
-                            key={color}
-                            onClick={() => setSelectedColor(color)}
-                            className={`px-2 py-0.5 border text-[10px] font-medium tracking-wide transition-all ${
-                              selectedColor === color
-                                ? 'border-accent-gold text-accent-gold bg-accent-gold/5'
-                                : 'border-gray-200 text-gray-600 hover:border-gray-400'
-                            }`}
-                          >
-                            {color}
-                          </button>
-                        ))}
+                      <div className="flex flex-wrap gap-3 mt-1">
+                        {product.colors.map((color, i) => {
+                          const isSelected = selectedColors.has(color);
+                          const thumb = product.images[i] || product.images[0];
+                          return (
+                            <button
+                              key={color}
+                              onClick={() => toggleColor(color)}
+                              className="relative flex flex-col items-center gap-1 group"
+                            >
+                              <div className={`relative w-14 h-[70px] overflow-hidden border-2 transition-all ${
+                                isSelected
+                                  ? 'border-accent-gold scale-105 shadow-md'
+                                  : 'border-gray-200 hover:border-gray-400 hover:scale-105'
+                              }`}>
+                                <img src={thumb} alt={color} className="w-full h-full object-cover" />
+                                {isSelected && (
+                                  <div className="absolute inset-0 bg-accent-gold/25 flex items-center justify-center">
+                                    <Check size={18} className="text-white drop-shadow font-bold" />
+                                  </div>
+                                )}
+                              </div>
+                              <span className={`text-[9px] font-semibold tracking-wide uppercase leading-tight text-center max-w-[56px] transition-colors ${
+                                isSelected ? 'text-accent-gold' : 'text-gray-400 group-hover:text-gray-600'
+                              }`}>
+                                {color}
+                              </span>
+                            </button>
+                          );
+                        })}
                       </div>
+                      {selectedColors.size > 1 && (
+                        <p className="text-[10px] text-accent-gold mt-2 font-semibold tracking-wide">
+                          ✓ {selectedColors.size} colors selected — each added as a separate cart item
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -310,9 +349,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                     }`}
                   >
                     {added ? (
-                      <><Check size={18} /> Added to Bag</>
+                      <><Check size={18} /> {selectedColors.size > 1 ? `${selectedColors.size} Colors Added!` : 'Added to Bag'}</>
                     ) : (
-                      <><ShoppingCart size={18} /> Add to Bag</>
+                      <><ShoppingCart size={18} /> {selectedColors.size > 1 ? `Add ${selectedColors.size} Colors to Bag` : 'Add to Bag'}</>
                     )}
                   </button>
                 </div>
