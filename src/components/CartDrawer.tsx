@@ -78,20 +78,17 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                             <Trash2 size={15} />
                           </button>
                         </div>
-
-                        {/* Color & size selection chips */}
-                        <div className="flex flex-wrap gap-1.5 mb-2">
-                          {item.selectedColor && (
-                            <span className="text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 bg-beige-light text-text-dark border border-gray-200">
-                              {item.selectedColor}
-                            </span>
+                        {/* Color thumbnail and label */}
+                        <div className="flex items-center gap-2 mt-2">
+                          {item.selectedImage && (
+                            <img src={item.selectedImage} alt={item.selectedColor} className="w-5 h-5 rounded-full border border-gray-200" />
                           )}
-                          {item.selectedSize && (
-                            <span className="text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 bg-beige-light text-text-dark border border-gray-200">
-                              {item.selectedSize}
-                            </span>
-                          )}
+                          <span className="text-[10px] uppercase tracking-wider text-gray-500">
+                            {item.selectedColor}{item.selectedSize ? ` / ${item.selectedSize}` : ''}
+                          </span>
                         </div>
+
+
 
                         <p className="text-sm font-medium text-text-dark">${item.price.toFixed(2)}</p>
                       </div>

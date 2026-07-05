@@ -93,7 +93,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 30 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-              className="pointer-events-auto bg-white w-full max-w-5xl max-h-[95vh] overflow-y-auto md:overflow-hidden rounded-none shadow-2xl flex flex-col md:flex-row relative"
+              className="pointer-events-auto bg-white w-full max-w-5xl md:h-[85vh] max-h-[95vh] overflow-y-auto md:overflow-hidden rounded-none shadow-2xl flex flex-col md:flex-row relative"
             >
               {/* ── Close ── */}
               <button
