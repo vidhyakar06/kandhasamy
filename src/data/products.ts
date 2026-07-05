@@ -310,7 +310,7 @@ export const products: Product[] = [
       'Maroon & Yellow',
       'Black & Pink'
     ],
-    colors: ['Multicolor'],
+    colors: ['Black & Gold', 'Maroon & Teal', 'Black & Yellow', 'Maroon & Yellow', 'Black & Pink'],
     sizes: ['Double (60" x 90")'],
     material: 'Premium Jacquard Cotton',
     rating: 5.0,
