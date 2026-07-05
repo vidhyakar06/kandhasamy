@@ -19,7 +19,7 @@ export const products: Product[] = [
       'Rolled Pile View',
       'Close-up Texture View',
     ],
-    colors: ['Red Checks', 'Orange Checks', 'Yellow Checks', 'Blue Checks', 'Brown & Blue Checks'],
+    colors: ['Red Checks', 'Orange Checks'],
     sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
     material: 'Organic Cotton Handloom',
     rating: 4.9,
