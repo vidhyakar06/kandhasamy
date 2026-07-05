@@ -34,7 +34,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
             className="fixed right-0 top-0 h-full w-full sm:max-w-md bg-white z-[70] shadow-2xl flex flex-col"
           >
             {/* Header */}
-            <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-primary">
+            <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-primary flex-shrink-0">
               <div className="flex items-center gap-3">
                 <ShoppingBag size={22} className="text-text-dark" />
                 <h2 className="text-lg font-serif tracking-widest uppercase">Shopping Bag ({totalItems})</h2>
@@ -44,8 +44,8 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
               </button>
             </div>
 
-            {/* Items */}
-            <div className="flex-grow overflow-y-auto p-6 space-y-6">
+            {/* Items — flex-1 + min-h-0 ensures items section fills space and scrolls */}
+            <div className="flex-1 min-h-0 overflow-y-auto p-6 space-y-6">
               {cart.length === 0 ? (
                 <div className="h-full flex flex-col items-center justify-center text-center">
                   <div className="w-20 h-20 bg-beige-light rounded-full flex items-center justify-center mb-4">
@@ -56,38 +56,65 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                 </div>
               ) : (
                 cart.map((item) => (
-                  <div key={item.id} className="flex gap-4 group">
-                    <div className="w-24 h-32 bg-gray-50 overflow-hidden">
-                      <img src={item.images[0]} alt={item.name} className="w-full h-full object-cover" />
+                  <div key={`${item.id}|${item.selectedColor}|${item.selectedSize}`} className="flex gap-4 group">
+
+                    {/* Exact image angle the customer selected */}
+                    <div className="w-24 h-32 bg-gray-50 overflow-hidden flex-shrink-0">
+                      <img
+                        src={item.selectedImage || item.images[0]}
+                        alt={item.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <div className="flex-grow flex flex-col justify-between py-1">
+
+                    <div className="flex-grow flex flex-col justify-between py-1 min-w-0">
                       <div>
-                        <div className="flex justify-between items-start mb-1">
-                          <h3 className="text-sm font-serif text-text-dark">{item.name}</h3>
-                          <button onClick={() => removeFromCart(item.id)} className="text-gray-400 hover:text-red-500 transition-colors">
-                            <Trash2 size={16} />
+                        <div className="flex justify-between items-start mb-1 gap-2">
+                          <h3 className="text-sm font-serif text-text-dark leading-snug line-clamp-2">{item.name}</h3>
+                          <button
+                            onClick={() => removeFromCart(item.id, item.selectedColor, item.selectedSize)}
+                            className="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"
+                          >
+                            <Trash2 size={15} />
                           </button>
                         </div>
-                        <p className="text-xs text-gray-500 mb-2 uppercase tracking-widest">{item.category}</p>
-                        <p className="text-sm font-medium">${item.price.toFixed(2)}</p>
+
+                        {/* Color & size selection chips */}
+                        <div className="flex flex-wrap gap-1.5 mb-2">
+                          {item.selectedColor && (
+                            <span className="text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 bg-beige-light text-text-dark border border-gray-200">
+                              {item.selectedColor}
+                            </span>
+                          )}
+                          {item.selectedSize && (
+                            <span className="text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 bg-beige-light text-text-dark border border-gray-200">
+                              {item.selectedSize}
+                            </span>
+                          )}
+                        </div>
+
+                        <p className="text-sm font-medium text-text-dark">${item.price.toFixed(2)}</p>
                       </div>
-                      
-                      <div className="flex items-center gap-4">
+
+                      <div className="flex items-center gap-4 mt-2">
                         <div className="flex items-center border border-gray-100 rounded-none bg-primary">
-                          <button 
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          <button
+                            onClick={() => updateQuantity(item.id, item.selectedColor, item.selectedSize, item.quantity - 1)}
                             className="p-1 px-2 hover:bg-gray-200 transition-colors"
                           >
                             <Minus size={14} />
                           </button>
                           <span className="text-sm font-medium w-6 text-center">{item.quantity}</span>
-                          <button 
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          <button
+                            onClick={() => updateQuantity(item.id, item.selectedColor, item.selectedSize, item.quantity + 1)}
                             className="p-1 px-2 hover:bg-gray-200 transition-colors"
                           >
                             <Plus size={14} />
                           </button>
                         </div>
+                        <span className="text-xs text-gray-400">
+                          Subtotal: ${(item.price * item.quantity).toFixed(2)}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -97,21 +124,21 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
 
             {/* Footer */}
             {cart.length > 0 && (
-              <div className="p-6 bg-primary border-t border-gray-100">
+              <div className="p-6 bg-primary border-t border-gray-100 flex-shrink-0">
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-gray-500 uppercase tracking-widest text-xs font-bold">Subtotal</span>
                   <span className="text-xl font-serif text-text-dark">${totalPrice.toFixed(2)}</span>
                 </div>
                 <div className="space-y-3">
-                  <Link 
-                    to="/checkout" 
+                  <Link
+                    to="/checkout"
                     onClick={onClose}
                     className="w-full lux-button flex items-center justify-center gap-2"
                   >
                     Proceed to Checkout <ArrowRight size={18} />
                   </Link>
                   <p className="text-[10px] text-center text-gray-400 uppercase tracking-widest pt-2">
-                    Shipping & taxes calculated at checkout
+                    Shipping &amp; taxes calculated at checkout
                   </p>
                 </div>
               </div>
@@ -124,4 +151,3 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
 };
 
 export default CartDrawer;
-

@@ -18,13 +18,17 @@ const ANGLE_ICONS = ['⊞', '▭', '▭', '◧', '◧'];
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose }) => {
   const { addToCart } = useCart();
-  const [activeIdx, setActiveIdx] = useState(0);
-  const [direction, setDirection] = useState(1);   // +1 forward / -1 backward
-  const [added, setAdded]         = useState(false);
+  const [activeIdx, setActiveIdx]       = useState(0);
+  const [direction, setDirection]       = useState(1);
+  const [added, setAdded]               = useState(false);
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSize, setSelectedSize]   = useState('');
 
   useEffect(() => {
     setActiveIdx(0);
     setAdded(false);
+    setSelectedColor(product?.colors?.[0] ?? '');
+    setSelectedSize(product?.sizes?.[0] ?? '');
   }, [product, isOpen]);
 
   if (!product) return null;
@@ -41,7 +45,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
   const next = () => goTo((activeIdx + 1) % images.length);
 
   const handleAddToCart = () => {
-    addToCart(product);
+    addToCart(product, selectedColor, selectedSize, images[activeIdx]);
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
@@ -247,16 +251,38 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                       <span className="text-text-dark font-semibold font-serif">{product.material}</span>
                     </div>
                     <div>
-                      <span className="text-gray-400 uppercase tracking-wider block mb-1">Sizes</span>
-                      <span className="text-text-dark font-semibold">{product.sizes.join(', ')}</span>
+                      <span className="text-gray-400 uppercase tracking-wider block mb-2">Sizes</span>
+                      <div className="flex flex-wrap gap-2">
+                        {product.sizes.map((size) => (
+                          <button
+                            key={size}
+                            onClick={() => setSelectedSize(size)}
+                            className={`px-2 py-0.5 border text-[10px] font-medium tracking-wide transition-all ${
+                              selectedSize === size
+                                ? 'border-accent-gold text-accent-gold bg-accent-gold/5'
+                                : 'border-gray-200 text-gray-600 hover:border-gray-400'
+                            }`}
+                          >
+                            {size}
+                          </button>
+                        ))}
+                      </div>
                     </div>
                     <div className="col-span-2">
-                      <span className="text-gray-400 uppercase tracking-wider block mb-1">Colors / Styles</span>
+                      <span className="text-gray-400 uppercase tracking-wider block mb-2">Colors / Styles</span>
                       <div className="flex flex-wrap gap-2 mt-1">
                         {product.colors.map((color) => (
-                          <span key={color} className="px-2 py-0.5 border border-gray-200 text-gray-600 text-[10px] font-medium tracking-wide">
+                          <button
+                            key={color}
+                            onClick={() => setSelectedColor(color)}
+                            className={`px-2 py-0.5 border text-[10px] font-medium tracking-wide transition-all ${
+                              selectedColor === color
+                                ? 'border-accent-gold text-accent-gold bg-accent-gold/5'
+                                : 'border-gray-200 text-gray-600 hover:border-gray-400'
+                            }`}
+                          >
                             {color}
-                          </span>
+                          </button>
                         ))}
                       </div>
                     </div>
