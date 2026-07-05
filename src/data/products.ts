@@ -10,14 +10,10 @@ export const products: Product[] = [
     images: [
       '/assets/towels/new_checks_stack.jpg',
       '/assets/towels/new_two_towels.jpg',
-      '/assets/towels/classic_checked_rolled_stack.jpg',
-      '/assets/towels/handloom_blue_checkered_stack.jpg',
     ],
     angleLabels: [
       'Stacked Bundle View',
       'Folded Duo View',
-      'Rolled Pile View',
-      'Close-up Texture View',
     ],
     colors: ['Red Checks', 'Orange Checks'],
     sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
