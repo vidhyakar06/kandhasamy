@@ -15,7 +15,7 @@ export const products: Product[] = [
       'Fan Spread View',
       'Stacked Pile View',
     ],
-    colors: ['Red', 'Green', 'Navy', 'Brown', 'Orange', 'Blue', 'Maroon', 'Yellow', 'Cyan', 'Grey', 'Teal'],
+    colors: ['Red', 'Green'],
     sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
     material: 'Organic Cotton Handloom',
     rating: 4.8,
