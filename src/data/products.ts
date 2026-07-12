@@ -2,28 +2,6 @@ import { Product } from '../types';
 
 export const products: Product[] = [
   {
-    id: '25',
-    name: 'Kandhasamy Textile White Stripe Border Handloom Towels',
-    price: 29.99,
-    description: 'Elegant white handloom towels featuring classic colored stripe borders in Blue and Red. Woven from 100% pure premium cotton for a crisp, lightweight, and highly absorbent finish. Perfect for everyday use with a minimalist, fresh aesthetic.',
-    category: 'Bath',
-    images: [
-      '/assets/towels/white_stripe_fan.jpg',
-      '/assets/towels/white_stripe_stack.jpg',
-    ],
-    angleLabels: [
-      'Fan Spread View',
-      'Flat Stack View',
-    ],
-    colors: ['Blue Stripe', 'Red Stripe'],
-    sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
-    material: 'Pure Cotton Handloom',
-    rating: 4.7,
-    reviews: 14,
-    isNew: true,
-    isBestSeller: true,
-  },
-  {
     id: '23',
     name: 'Kandhasamy Textile Premium Checked Towels Collection',
     price: 44.99,
