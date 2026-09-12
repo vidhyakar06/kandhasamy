@@ -90,7 +90,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
 
 
 
-                        <p className="text-sm font-medium text-text-dark">${item.price.toFixed(2)}</p>
+                        <p className="text-sm font-medium text-text-dark">₹{item.price.toFixed(2)}</p>
                       </div>
 
                       <div className="flex items-center gap-4 mt-2">
@@ -110,7 +110,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                           </button>
                         </div>
                         <span className="text-xs text-gray-400">
-                          Subtotal: ${(item.price * item.quantity).toFixed(2)}
+                          Subtotal: ₹{(item.price * item.quantity).toFixed(2)}
                         </span>
                       </div>
                     </div>
@@ -124,7 +124,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
               <div className="p-6 bg-primary border-t border-gray-100 flex-shrink-0">
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-gray-500 uppercase tracking-widest text-xs font-bold">Subtotal</span>
-                  <span className="text-xl font-serif text-text-dark">${totalPrice.toFixed(2)}</span>
+                  <span className="text-xl font-serif text-text-dark">₹{totalPrice.toFixed(2)}</span>
                 </div>
                 <div className="space-y-3">
                   <Link
