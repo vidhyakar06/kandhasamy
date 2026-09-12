@@ -327,7 +327,7 @@ export const products: Product[] = [
     images: ['/assets/towels/handloom_blue_checkered_stack.jpg'],
     angleLabels: ['Stack View'],
     colors: ['Blue', 'Green', 'Red', 'Maroon'],
-    sizes: ['Single (30" x 60")', 'Double (60" x 90")'],
+    sizes: ['Face Towel (12" x 12")', 'Hand Towel (16" x 28")', 'Medium (24" x 48")', 'Single (30" x 60")', 'Large (40" x 80")', 'Double (60" x 90")', 'Extra Large (80" x 120")'],
     material: 'Organic Cotton',
     rating: 4.8,
     reviews: 21,
